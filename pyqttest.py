@@ -1,28 +1,21 @@
-# -*- coding: utf-8 -*-
-                                                                     
-import twitter
+from twitter import *
+import os 
+import sys
 
-CONSUMER_KEY="SaDuZBg0XMLanyNFPCELZEMQ4"
-CONSUMER_SECRET="UvDGlfppKKmw5SRY1EAEeHeJQFM1L5hfp0jGeGAr50E99UgdRz"
-ACCESS_TOKEN="2942019786-Qc3kejjsJj860rktJSzZi6SwO0vjGjgzJsuJFAt"
-ACCESS_TOKEN_SECRET="Xa3uIhaQLQISFiv36pFxKs2tJzV99yQWgYhKtfABGjLFr"
+f = open('.key','r') 
 
+CONSUMER_KEY=f.readline().strip()
+CONSUMER_SECRET=f.readline().strip()
 
-#
-#api = twitter.api(consumer_key=CONSUMER_KEY,
-#                      consumer_secret=CONSUMER_SECRET,
-#                      access_token_key=ACCESS_TOKEN,
-#                      access_token_secret=ACCESS_TOKEN_SECRET,
-#                      cache=None)
-#
-#api.PostUpdate("test")
-#
+MY_TWITTER_CREDS = os.path.expanduser('.my_app_credentials')
+if not os.path.exists(MY_TWITTER_CREDS):
+    oauth_dance("My App Name", CONSUMER_KEY, CONSUMER_SECRET,
+                MY_TWITTER_CREDS)
 
+oauth_token, oauth_secret = read_token_file(MY_TWITTER_CREDS)
 
-auth = OAuth(ACCESS_TOKEN, ACCESS_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
-twitter_stream = TwitterStream(auth=auth, domain="userstream.twitter.com")
-for msg in twitter_stream.user():
-    if "in_reply_to_screen_name" in msg and "text" in msg:
-        if msg["in_reply_to_screen_name"] == "kasajei":
-            print msg["text"]
-            
+twitter = Twitter(auth=OAuth(
+    oauth_token, oauth_secret, CONSUMER_KEY, CONSUMER_SECRET))
+
+#これで呟ける
+#twitter.statuses.update(status='yatta')
