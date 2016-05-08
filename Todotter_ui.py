@@ -73,7 +73,7 @@ class Ui_Dialog(object):
         self.listWidget.setBatchSize(100)
         self.listWidget.setObjectName(_fromUtf8("listWidget"))
         item = QtGui.QListWidgetItem()
-        self.listWidget.addItem(item)
+        # self.listWidget.addItem(item)
 
         self.textEdit_6 = QtGui.QTextEdit(self.tab)
         self.textEdit_6.setGeometry(QtCore.QRect(0, 20, 18, 21))
@@ -141,7 +141,7 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)
-        self.listWidget.item(0).setText(_translate("Dialog", "account1(@id1):tweet1", None))
+        # self.listWidget.item(0).setText(_translate("Dialog", "account1(@id1):tweet1", None))
 
 
         # item = self.listWidget.item(0)

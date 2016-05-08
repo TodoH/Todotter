@@ -43,8 +43,10 @@ class TimeLineTweet:
 timeline=[]
 
 class Stream(threading.Thread):
-    # def __init__(self,viewOBJ):
-    #     self.view = viewOBJ
+    def __init__(self,viewOBJ):
+        threading.Thread.__init__(self)
+
+        self.view = viewOBJ
     # def __init__(self):
     #     # self.view = viewOBJ
     #
@@ -58,8 +60,8 @@ class Stream(threading.Thread):
                         status["user"]["screen_name"],
                         status["text"],
                         status["id"]))
-                # self.view.add("test")
-        #        print(status["text"])
+                self.view.add(status["user"]["name"]+'(@'+status["user"]["screen_name"]+'):'+status["text"])
+                # print(status["text"])
             except:
                 print("error")
             for i in timeline:
