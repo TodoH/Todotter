@@ -22,7 +22,7 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_Dialog(object):
+class Ui_Dialog(QtGui.QWidget):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(840, 480)
@@ -95,13 +95,16 @@ class Ui_Dialog(object):
         self.textEdit_7.setOverwriteMode(False)
         self.textEdit_7.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
         self.textEdit_7.setObjectName(_fromUtf8("textEdit_7"))
-        self.textEdit_5 = QtGui.QTextEdit(self.tab)
-        self.textEdit_5.setGeometry(QtCore.QRect(18, 20, 822, 21))
-        self.textEdit_5.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.IBeamCursor))
-        self.textEdit_5.setStyleSheet(_fromUtf8("color: rgb(0, 255, 9);\n"
+        self.tweetedit = QtGui.QTextEdit(self.tab)
+        # self.tweetedit = TweetEdit(self.tab)
+
+
+        self.tweetedit.setGeometry(QtCore.QRect(18, 20, 822, 21))
+        self.tweetedit.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.IBeamCursor))
+        self.tweetedit.setStyleSheet(_fromUtf8("color: rgb(0, 255, 9);\n"
 "background-color: rgb(0, 0, 0);"))
-        self.textEdit_5.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.textEdit_5.setObjectName(_fromUtf8("textEdit_5"))
+        self.tweetedit.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.tweetedit.setObjectName(_fromUtf8("tweetedit"))
         self.tabWidget.addTab(self.tab, _fromUtf8(""))
         self.tab_2 = QtGui.QWidget()
         self.tab_2.setObjectName(_fromUtf8("tab_2"))
@@ -244,3 +247,51 @@ class Ui_Dialog(object):
 
         print(self.listWidget.__len__())
         self.listWidget.item(self.listWidget.__len__() - 1).setText(_translate("Dialog", text, None))
+    #
+    # def keyPressEvent(self, qKeyEvent):
+    #     print(qKeyEvent.key())
+    #     if qKeyEvent.key() == QtCore.Qt.Key_Return:
+    #         print('Enter pressed')
+    #     else:
+    #         super().keyPressEvent(qKeyEvent)
+
+    #
+    # def eventFilter(self, source, event):
+    #     if (event.type() == QtCore.QEvent.KeyPress
+    #         and source is self.tweetedit
+    #         and event.key() == QtCore.Qt.Key_Return):
+    #         # key = event.key()
+    #         # pos = event.pos()
+    #         # print('mouse move: (%d, %d)' % (pos.x(), pos.y()))
+    #         # if key == QtCore.Qt.Key_Enter:
+    #         print("bb")
+    #         return (True)
+    #     else:
+    #         return (False)
+    #         # return QtGui.QWidget.eventFilter(self, source, event)
+    #
+
+class TweetEdit(QtGui.QTextEdit):
+    def __init__(self, *args):
+        QtGui.QTextEdit.__init__(self, *args)
+    def keyPressEvent(self, event):
+        key = event.key()
+        if key == QtCore.Qt.Key_Return:
+            print("bb")
+        else:
+            return(False)
+
+    #
+    # def eventFilter(self, source, event):
+    #
+    #     if (event.type() == QtCore.QEvent.KeyPress
+    #         and event.key() == QtCore.Qt.Key_Return):
+    #         # key = event.key()
+    #         # pos = event.pos()
+    #         # print('mouse move: (%d, %d)' % (pos.x(), pos.y()))
+    #         # if key == QtCore.Qt.Key_Enter:
+    #         print("bb")
+    #         return(True)
+    #     else:
+    #         return(False)
+    #     # return QtGui.QWidget.eventFilter(self, source, event)

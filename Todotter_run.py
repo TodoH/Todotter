@@ -12,11 +12,28 @@ class MyForm(QtGui.QDialog):
         # self.ui.listWidget.item(0).setText(_translate("Dialog", "tanomu", None))
     def add(self,text):
         self.ui.addList(text)
+    def keyPressEvent(self, event):
+        key = event.key()
+        if key == QtCore.Qt.Key_Enter:
+            print("aa")
+
+
+# class TweetEdit(QtGui.QTextEdit):
+#     def __init__(self, *args):
+#         QtGui.QTextEdit.__init__(self, *args)
+#
+#     def keyPressEvent(self, event):
+#         key = event.key()
+#         if key == QtCore.Qt.Key_C:
+#             print("bb")
+
+
+
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     myapp = MyForm()
     myapp.show()
     api = Stream(myapp)
+    api.setDaemon(True)
     api.start()
     sys.exit(app.exec_())
-

@@ -25,6 +25,12 @@ stream = TwitterStream(auth=auth)
 
 twitter_userstream = TwitterStream(auth=auth, domain='userstream.twitter.com')
 
+class Twitter:
+    def tweet(self,text):
+        twitter.statuses.update(status=text)
+    # def favorite(self):
+
+
 
 class TimeLineTweet:
     name=""
