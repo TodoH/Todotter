@@ -12,10 +12,7 @@ class MyForm(QtGui.QDialog):
         # self.ui.listWidget.item(0).setText(_translate("Dialog", "tanomu", None))
     def add(self,text):
         self.ui.addList(text)
-    def keyPressEvent(self, event):
-        key = event.key()
-        if key == QtCore.Qt.Key_Enter:
-            print("aa")
+    # def keyPressEvent(self, event):
 
 
 # class TweetEdit(QtGui.QTextEdit):

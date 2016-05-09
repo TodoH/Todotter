@@ -20,7 +20,7 @@ twitter = Twitter(auth=OAuth(
 auth=OAuth(oauth_token, oauth_secret, CONSUMER_KEY, CONSUMER_SECRET)
 
 # これで呟ける
-#twitter.statuses.update(status='yatta')
+# twitter.statuses.update(status='yatta')
 stream = TwitterStream(auth=auth)
 
 twitter_userstream = TwitterStream(auth=auth, domain='userstream.twitter.com')
@@ -28,15 +28,16 @@ twitter_userstream = TwitterStream(auth=auth, domain='userstream.twitter.com')
 class Twitter:
     def tweet(self,text):
         twitter.statuses.update(status=text)
+
     # def favorite(self):
 
 
 
 class TimeLineTweet:
-    name=""
-    user_id=""
-    text=""
-    tweet_id=""
+    name = ""
+    user_id = ""
+    text = ""
+    tweet_id = ""
 
     def __init__(self,name,user_id,text,tweet_id):
         self.name = name

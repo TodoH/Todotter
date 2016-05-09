@@ -7,6 +7,8 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from Todotter_api import *
+
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -23,6 +25,7 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_Dialog(QtGui.QWidget):
+    tl_items = [[]]
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(840, 480)
@@ -95,8 +98,8 @@ class Ui_Dialog(QtGui.QWidget):
         self.textEdit_7.setOverwriteMode(False)
         self.textEdit_7.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
         self.textEdit_7.setObjectName(_fromUtf8("textEdit_7"))
-        self.tweetedit = QtGui.QTextEdit(self.tab)
-        # self.tweetedit = TweetEdit(self.tab)
+        # self.tweetedit = QtGui.QTextEdit(self.tab)
+        self.tweetedit = TweetEdit(self.tab)
 
 
         self.tweetedit.setGeometry(QtCore.QRect(18, 20, 822, 21))
@@ -147,74 +150,6 @@ class Ui_Dialog(QtGui.QWidget):
         # self.listWidget.item(0).setText(_translate("Dialog", "account1(@id1):tweet1", None))
 
 
-        # item = self.listWidget.item(0)
-        # item.setText(_translate("Dialog", "account1(@id1):tweet1", None))
-        # item = self.listWidget.item(1)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(2)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(3)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(4)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(5)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(6)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(7)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(8)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(9)
-        # item.setText(_translate("Dialog", "account1(@id1):tweet2", None))
-        # item = self.listWidget.item(10)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(11)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(12)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(13)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(14)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(15)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(16)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(17)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(18)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(19)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(20)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(21)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(22)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(23)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(24)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(25)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(26)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(27)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(28)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(29)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(30)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(31)
-        # item.setText(_translate("Dialog", "新しいアイテム", None))
-        # item = self.listWidget.item(32)
-        # item.setText(_translate("Dialog", "account1(@id1):tweet3", None))
-        # item = self.listWidget.item(33)
-        # item.setText(_translate("Dialog", "account2(@id2):tweet4", None))
         self.listWidget.setSortingEnabled(__sortingEnabled)
         self.textEdit_6.setHtml(_translate("Dialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -241,12 +176,15 @@ class Ui_Dialog(QtGui.QWidget):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Dialog", "AddUser", None))
 
-    def addList(self, text):
-        item = QtGui.QListWidgetItem()
+    def addList(self, item):
+        self.tl_items.append([])
+        self.item = QtGui.QListWidgetItem()
         self.listWidget.addItem(item)
 
         print(self.listWidget.__len__())
-        self.listWidget.item(self.listWidget.__len__() - 1).setText(_translate("Dialog", text, None))
+        # self.listWidget.item(self.listWidget.__len__() - 1).setText(_translate("Dialog", text, None))
+        self.listWidget.item(self.listWidget.__len__() - 1).set
+
     #
     # def keyPressEvent(self, qKeyEvent):
     #     print(qKeyEvent.key())
@@ -277,9 +215,13 @@ class TweetEdit(QtGui.QTextEdit):
     def keyPressEvent(self, event):
         key = event.key()
         if key == QtCore.Qt.Key_Return:
-            print("bb")
+            text = (self.toPlainText())
+            self.setText("")
+            Twitter().tweet(text)
+        # つぶやきにどうやって 番号を付加しようかな
+        # objectごと受け取って抜き出しもこっちでやろうかな。
         else:
-            return(False)
+            super().keyPressEvent(event)
 
     #
     # def eventFilter(self, source, event):
