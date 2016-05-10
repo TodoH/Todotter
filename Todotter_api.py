@@ -4,7 +4,6 @@ import threading
 
 
 f = open('.key','r')
-
 CONSUMER_KEY=f.readline().strip()
 CONSUMER_SECRET=f.readline().strip()
 
@@ -27,8 +26,8 @@ twitter_userstream = TwitterStream(auth=auth, domain='userstream.twitter.com')
 
 class Twitter:
     def tweet(self,text):
-        twitter.statuses.update(status=text)
 
+        twitter.statuses.update(status=text)
     # def favorite(self):
 
 

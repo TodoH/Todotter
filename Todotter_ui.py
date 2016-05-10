@@ -8,7 +8,7 @@
 
 from PyQt4 import QtCore, QtGui
 from Todotter_api import *
-
+import sys
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -109,6 +109,7 @@ class Ui_Dialog(QtGui.QWidget):
         self.tweetedit.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tweetedit.setObjectName(_fromUtf8("tweetedit"))
         self.tabWidget.addTab(self.tab, _fromUtf8(""))
+
         self.tab_2 = QtGui.QWidget()
         self.tab_2.setObjectName(_fromUtf8("tab_2"))
         self.textEdit_2 = QtGui.QTextEdit(self.tab_2)
@@ -138,6 +139,78 @@ class Ui_Dialog(QtGui.QWidget):
         self.textEdit_4.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit_4.setObjectName(_fromUtf8("textEdit_4"))
         self.tabWidget.addTab(self.tab_2, _fromUtf8(""))
+        # ##########################
+        self.tab_3 = QtGui.QWidget()
+
+        self.tab_3.setObjectName(_fromUtf8("tab_3"))
+        self.listWidget = QtGui.QListWidget(self.tab_3)
+        self.listWidget.setEnabled(True)
+        self.listWidget.setGeometry(QtCore.QRect(0, 38, 840, 441))
+        self.listWidget.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.listWidget.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.listWidget.setAutoFillBackground(True)
+        self.listWidget.setStyleSheet(_fromUtf8("background-color: rgb(0, 0, 0);\n"
+                                                "gridline-color: rgb(0, 0, 0);\n"
+                                                "color: rgb(0, 255, 9);\n"
+                                                "border-color: rgb(61, 61, 61);\n"
+                                                ""))
+        self.listWidget.setFrameShape(QtGui.QFrame.NoFrame)
+        self.listWidget.setFrameShadow(QtGui.QFrame.Plain)
+        self.listWidget.setLineWidth(0)
+        self.listWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.listWidget.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.listWidget.setTabKeyNavigation(False)
+        self.listWidget.setProperty("showDropIndicator", False)
+        self.listWidget.setAlternatingRowColors(False)
+        self.listWidget.setSelectionMode(QtGui.QAbstractItemView.SingleSelection)
+        self.listWidget.setIconSize(QtCore.QSize(0, 0))
+        self.listWidget.setTextElideMode(QtCore.Qt.ElideNone)
+        self.listWidget.setVerticalScrollMode(QtGui.QAbstractItemView.ScrollPerPixel)
+        self.listWidget.setHorizontalScrollMode(QtGui.QAbstractItemView.ScrollPerItem)
+        self.listWidget.setMovement(QtGui.QListView.Free)
+        self.listWidget.setFlow(QtGui.QListView.TopToBottom)
+        self.listWidget.setProperty("isWrapping", False)
+        self.listWidget.setResizeMode(QtGui.QListView.Adjust)
+        self.listWidget.setLayoutMode(QtGui.QListView.Batched)
+        self.listWidget.setViewMode(QtGui.QListView.ListMode)
+        self.listWidget.setBatchSize(100)
+        self.listWidget.setObjectName(_fromUtf8("listWidget"))
+        item = QtGui.QListWidgetItem()
+        # self.listWidget.addItem(item)
+
+        self.textEdit_6 = QtGui.QTextEdit(self.tab_3)
+        self.textEdit_6.setGeometry(QtCore.QRect(0, 20, 18, 21))
+        self.textEdit_6.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.textEdit_6.setStyleSheet(_fromUtf8("background-color: rgb(0, 0, 0);\n"
+                                                "color: rgb(0, 255, 9);"))
+        self.textEdit_6.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.textEdit_6.setReadOnly(True)
+        self.textEdit_6.setOverwriteMode(False)
+        self.textEdit_6.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
+        self.textEdit_6.setObjectName(_fromUtf8("textEdit_6"))
+        self.textEdit_7 = QtGui.QTextEdit(self.tab_3)
+        self.textEdit_7.setGeometry(QtCore.QRect(0, 0, 840, 20))
+        self.textEdit_7.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.textEdit_7.setStyleSheet(_fromUtf8("background-color: rgb(0, 0, 0);\n"
+                                                "color: rgb(0, 255, 9);"))
+        self.textEdit_7.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.textEdit_7.setReadOnly(True)
+        self.textEdit_7.setOverwriteMode(False)
+        self.textEdit_7.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
+        self.textEdit_7.setObjectName(_fromUtf8("textEdit_7"))
+        # self.tweetedit = QtGui.QTextEdit(self.tab)
+        self.tweetedit = TweetEdit(self.tab_3)
+
+        self.tweetedit.setGeometry(QtCore.QRect(18, 20, 822, 21))
+        self.tweetedit.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.IBeamCursor))
+        self.tweetedit.setStyleSheet(_fromUtf8("color: rgb(0, 255, 9);\n"
+                                               "background-color: rgb(0, 0, 0);"))
+        self.tweetedit.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.tweetedit.setObjectName(_fromUtf8("tweetedit"))
+
+        self.tabWidget.addTab(self.tab_3, _fromUtf8(""))
+
+        # ##########################
 
         self.retranslateUi(Dialog)
         self.tabWidget.setCurrentIndex(0)
@@ -218,6 +291,12 @@ class TweetEdit(QtGui.QTextEdit):
             text = (self.toPlainText())
             self.setText("")
             Twitter().tweet(text)
+            f2 = open('Todotter_ui.py', 'a')
+            f2.write("#test")
+            python = sys.executable
+            os.execl(python, python, *sys.argv)
+
+
         # つぶやきにどうやって 番号を付加しようかな
         # objectごと受け取って抜き出しもこっちでやろうかな。
         else:
@@ -237,3 +316,4 @@ class TweetEdit(QtGui.QTextEdit):
     #     else:
     #         return(False)
     #     # return QtGui.QWidget.eventFilter(self, source, event)
+#test
