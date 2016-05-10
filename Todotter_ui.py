@@ -139,78 +139,82 @@ class Ui_Dialog(QtGui.QWidget):
         self.textEdit_4.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit_4.setObjectName(_fromUtf8("textEdit_4"))
         self.tabWidget.addTab(self.tab_2, _fromUtf8(""))
-        # ##########################
+        # ##########################        # ##########################        # ##########################
+
+
         self.tab_3 = QtGui.QWidget()
 
         self.tab_3.setObjectName(_fromUtf8("tab_3"))
-        self.listWidget = QtGui.QListWidget(self.tab_3)
-        self.listWidget.setEnabled(True)
-        self.listWidget.setGeometry(QtCore.QRect(0, 38, 840, 441))
-        self.listWidget.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.ArrowCursor))
-        self.listWidget.setFocusPolicy(QtCore.Qt.TabFocus)
-        self.listWidget.setAutoFillBackground(True)
-        self.listWidget.setStyleSheet(_fromUtf8("background-color: rgb(0, 0, 0);\n"
+        self.listWidget2 = QtGui.QListWidget(self.tab_3)
+        self.listWidget2.setEnabled(True)
+        self.listWidget2.setGeometry(QtCore.QRect(0, 38, 840, 441))
+        self.listWidget2.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.listWidget2.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.listWidget2.setAutoFillBackground(True)
+        self.listWidget2.setStyleSheet(_fromUtf8("background-color: rgb(0, 0, 0);\n"
                                                 "gridline-color: rgb(0, 0, 0);\n"
                                                 "color: rgb(0, 255, 9);\n"
                                                 "border-color: rgb(61, 61, 61);\n"
                                                 ""))
-        self.listWidget.setFrameShape(QtGui.QFrame.NoFrame)
-        self.listWidget.setFrameShadow(QtGui.QFrame.Plain)
-        self.listWidget.setLineWidth(0)
-        self.listWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.listWidget.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.listWidget.setTabKeyNavigation(False)
-        self.listWidget.setProperty("showDropIndicator", False)
-        self.listWidget.setAlternatingRowColors(False)
-        self.listWidget.setSelectionMode(QtGui.QAbstractItemView.SingleSelection)
-        self.listWidget.setIconSize(QtCore.QSize(0, 0))
-        self.listWidget.setTextElideMode(QtCore.Qt.ElideNone)
-        self.listWidget.setVerticalScrollMode(QtGui.QAbstractItemView.ScrollPerPixel)
-        self.listWidget.setHorizontalScrollMode(QtGui.QAbstractItemView.ScrollPerItem)
-        self.listWidget.setMovement(QtGui.QListView.Free)
-        self.listWidget.setFlow(QtGui.QListView.TopToBottom)
-        self.listWidget.setProperty("isWrapping", False)
-        self.listWidget.setResizeMode(QtGui.QListView.Adjust)
-        self.listWidget.setLayoutMode(QtGui.QListView.Batched)
-        self.listWidget.setViewMode(QtGui.QListView.ListMode)
-        self.listWidget.setBatchSize(100)
-        self.listWidget.setObjectName(_fromUtf8("listWidget"))
+        self.listWidget2.setFrameShape(QtGui.QFrame.NoFrame)
+        self.listWidget2.setFrameShadow(QtGui.QFrame.Plain)
+        self.listWidget2.setLineWidth(0)
+        self.listWidget2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.listWidget2.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.listWidget2.setTabKeyNavigation(False)
+        self.listWidget2.setProperty("showDropIndicator", False)
+        self.listWidget2.setAlternatingRowColors(False)
+        self.listWidget2.setSelectionMode(QtGui.QAbstractItemView.SingleSelection)
+        self.listWidget2.setIconSize(QtCore.QSize(0, 0))
+        self.listWidget2.setTextElideMode(QtCore.Qt.ElideNone)
+        self.listWidget2.setVerticalScrollMode(QtGui.QAbstractItemView.ScrollPerPixel)
+        self.listWidget2.setHorizontalScrollMode(QtGui.QAbstractItemView.ScrollPerItem)
+        self.listWidget2.setMovement(QtGui.QListView.Free)
+        self.listWidget2.setFlow(QtGui.QListView.TopToBottom)
+        self.listWidget2.setProperty("isWrapping", False)
+        self.listWidget2.setResizeMode(QtGui.QListView.Adjust)
+        self.listWidget2.setLayoutMode(QtGui.QListView.Batched)
+        self.listWidget2.setViewMode(QtGui.QListView.ListMode)
+        self.listWidget2.setBatchSize(100)
+        self.listWidget2.setObjectName(_fromUtf8("listWidget"))
         item = QtGui.QListWidgetItem()
         # self.listWidget.addItem(item)
 
-        self.textEdit_6 = QtGui.QTextEdit(self.tab_3)
-        self.textEdit_6.setGeometry(QtCore.QRect(0, 20, 18, 21))
-        self.textEdit_6.setFocusPolicy(QtCore.Qt.TabFocus)
-        self.textEdit_6.setStyleSheet(_fromUtf8("background-color: rgb(0, 0, 0);\n"
+        self.textEdit_60 = QtGui.QTextEdit(self.tab_3)
+        self.textEdit_60.setGeometry(QtCore.QRect(0, 20, 18, 21))
+        self.textEdit_60.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.textEdit_60.setStyleSheet(_fromUtf8("background-color: rgb(0, 0, 0);\n"
                                                 "color: rgb(0, 255, 9);"))
-        self.textEdit_6.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.textEdit_6.setReadOnly(True)
-        self.textEdit_6.setOverwriteMode(False)
-        self.textEdit_6.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
-        self.textEdit_6.setObjectName(_fromUtf8("textEdit_6"))
-        self.textEdit_7 = QtGui.QTextEdit(self.tab_3)
-        self.textEdit_7.setGeometry(QtCore.QRect(0, 0, 840, 20))
-        self.textEdit_7.setFocusPolicy(QtCore.Qt.TabFocus)
-        self.textEdit_7.setStyleSheet(_fromUtf8("background-color: rgb(0, 0, 0);\n"
+        self.textEdit_60.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.textEdit_60.setReadOnly(True)
+        self.textEdit_60.setOverwriteMode(False)
+        self.textEdit_60.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
+        self.textEdit_60.setObjectName(_fromUtf8("textEdit_6"))
+        self.textEdit_70 = QtGui.QTextEdit(self.tab_3)
+        self.textEdit_70.setGeometry(QtCore.QRect(0, 0, 840, 20))
+        self.textEdit_70.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.textEdit_70.setStyleSheet(_fromUtf8("background-color: rgb(0, 0, 0);\n"
                                                 "color: rgb(0, 255, 9);"))
-        self.textEdit_7.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.textEdit_7.setReadOnly(True)
-        self.textEdit_7.setOverwriteMode(False)
-        self.textEdit_7.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
-        self.textEdit_7.setObjectName(_fromUtf8("textEdit_7"))
+        self.textEdit_70.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.textEdit_70.setReadOnly(True)
+        self.textEdit_70.setOverwriteMode(False)
+        self.textEdit_70.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
+        self.textEdit_70.setObjectName(_fromUtf8("textEdit_7"))
         # self.tweetedit = QtGui.QTextEdit(self.tab)
-        self.tweetedit = TweetEdit(self.tab_3)
+        self.tweetedit2 = TweetEdit(self.tab_3)
 
-        self.tweetedit.setGeometry(QtCore.QRect(18, 20, 822, 21))
-        self.tweetedit.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.IBeamCursor))
-        self.tweetedit.setStyleSheet(_fromUtf8("color: rgb(0, 255, 9);\n"
+        self.tweetedit2.setGeometry(QtCore.QRect(18, 20, 822, 21))
+        self.tweetedit2.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.IBeamCursor))
+        self.tweetedit2.setStyleSheet(_fromUtf8("color: rgb(0, 255, 9);\n"
                                                "background-color: rgb(0, 0, 0);"))
-        self.tweetedit.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.tweetedit.setObjectName(_fromUtf8("tweetedit"))
+        self.tweetedit2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.tweetedit2.setObjectName(_fromUtf8("tweetedit"))
 
         self.tabWidget.addTab(self.tab_3, _fromUtf8(""))
 
-        # ##########################
+        # ##########################        # ##########################        # ##########################
+
+
 
         self.retranslateUi(Dialog)
         self.tabWidget.setCurrentIndex(0)
@@ -249,6 +253,24 @@ class Ui_Dialog(QtGui.QWidget):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Dialog", "AddUser", None))
 
+
+#<<<<<<<<<<<<<<<<<<<<<<<<挿入2
+        self.textEdit_60.setHtml(_translate("Dialog",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'.SF NS Text\'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&gt;</p>\n"
+                                           "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>",
+                                           None))
+        self.textEdit_70.setHtml(_translate("Dialog",
+                                           "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                           "p, li { white-space: pre-wrap; }\n"
+                                           "</style></head><body style=\" font-family:\'.SF NS Text\'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+                                           "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">New Tweet</p></body></html>",
+                                           None))
+
     def addList(self, item):
         self.tl_items.append([])
         self.item = QtGui.QListWidgetItem()
@@ -258,29 +280,7 @@ class Ui_Dialog(QtGui.QWidget):
         # self.listWidget.item(self.listWidget.__len__() - 1).setText(_translate("Dialog", text, None))
         self.listWidget.item(self.listWidget.__len__() - 1).set
 
-    #
-    # def keyPressEvent(self, qKeyEvent):
-    #     print(qKeyEvent.key())
-    #     if qKeyEvent.key() == QtCore.Qt.Key_Return:
-    #         print('Enter pressed')
-    #     else:
-    #         super().keyPressEvent(qKeyEvent)
 
-    #
-    # def eventFilter(self, source, event):
-    #     if (event.type() == QtCore.QEvent.KeyPress
-    #         and source is self.tweetedit
-    #         and event.key() == QtCore.Qt.Key_Return):
-    #         # key = event.key()
-    #         # pos = event.pos()
-    #         # print('mouse move: (%d, %d)' % (pos.x(), pos.y()))
-    #         # if key == QtCore.Qt.Key_Enter:
-    #         print("bb")
-    #         return (True)
-    #     else:
-    #         return (False)
-    #         # return QtGui.QWidget.eventFilter(self, source, event)
-    #
 
 class TweetEdit(QtGui.QTextEdit):
     def __init__(self, *args):
@@ -291,8 +291,9 @@ class TweetEdit(QtGui.QTextEdit):
             text = (self.toPlainText())
             self.setText("")
             Twitter().tweet(text)
-            f2 = open('Todotter_ui.py', 'a')
-            f2.write("#test")
+            f3 = open('Todotter_ui.py')
+            f2 = open('Todotter_ui_test.py','a')
+            f2.write(f3.read())
             python = sys.executable
             os.execl(python, python, *sys.argv)
 
@@ -302,18 +303,3 @@ class TweetEdit(QtGui.QTextEdit):
         else:
             super().keyPressEvent(event)
 
-    #
-    # def eventFilter(self, source, event):
-    #
-    #     if (event.type() == QtCore.QEvent.KeyPress
-    #         and event.key() == QtCore.Qt.Key_Return):
-    #         # key = event.key()
-    #         # pos = event.pos()
-    #         # print('mouse move: (%d, %d)' % (pos.x(), pos.y()))
-    #         # if key == QtCore.Qt.Key_Enter:
-    #         print("bb")
-    #         return(True)
-    #     else:
-    #         return(False)
-    #     # return QtGui.QWidget.eventFilter(self, source, event)
-#test
